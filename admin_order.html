@@ -43,8 +43,12 @@
       background-color: #d57e9dc7;
       border-radius: 5px;
     }
-    a.app-menu__item:focus{
-      outline: none;
+    a.activetab{
+      background: #db5c90;
+      text-decoration: none;
+      color: rgb(22 22 72);
+      box-shadow: none;
+      border: 1px solid rgb(22 22 72);
     }
     
     </style>
@@ -67,7 +71,7 @@
       </a>
     </li>
     <li>
-      <a class="app-menu__item" href="admin_order.html" autofocus>
+      <a class="app-menu__item activetab" href="admin_order.html">
         <i class="app-menu__icon fa-solid fa-cart-shopping"></i>
         <span class="app-menu__label">Đơn hàng</span>
       </a>

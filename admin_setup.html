@@ -43,8 +43,12 @@
       background-color: #d57e9dc7;
       border-radius: 5px;
     }
-    a.app-menu__item:focus{
-      outline: none;
+    a.activetab{
+      background: #db5c90;
+      text-decoration: none;
+      color: rgb(22 22 72);
+      box-shadow: none;
+      border: 1px solid rgb(22 22 72);
     }
     
     </style>
@@ -98,7 +102,7 @@
       </a>
     </li>
     <li>
-      <a class="app-menu__item" href="admin_setup.html" autofocus>
+      <a class="app-menu__item activetab" href="admin_setup.html">
         <i class="app-menu__icon fa-solid fa-gear"></i>
         <span class="app-menu__label">Cài đặt</span>
       </a>
@@ -118,7 +122,7 @@
     <ul class="app-breadcrumb breadcrumb side">
       <li class="breadcrumb-item active"><a href="#"><b>Danh sách đơn hàng</b></a></li>
     </ul>
-    
+  </div>
 </main>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
