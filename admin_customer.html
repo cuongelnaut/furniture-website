@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fonts/css/all.css">
+    <link rel="stylesheet" href="fonts/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/png" href="pic/icon.ico"/>
+    <title>Admin|Khách hàng</title>
+    <style>
+      .tile-footer-menu{
+        position:absolute;
+        bottom:2%;
+        text-align:center;
+        color: #FFF;
+        text-shadow: 1px 1px #b94971, 2px 2px #b94971, 3px 3px #b94971,
+                    -1px -1px #8d6cb9, -2px -1px #8d6cb9, -3px -1px #8d6cb9;
+        font: Bold 20px Sketch_Block;
+        -webkit-transition: all 0.12s ease-out;
+        -moz-transition:all 0.12s ease-out;
+        -o-tramsition:all 0.12s ease-out;
+        padding:0 20px;
+    }
+    .menu-bar{
+      font-size: 30px;
+      padding:5px 10px;
+    }
+    body{
+      position:relative;
+      width:100%;
+    }
+    aside.hide{
+      width: 0;
+    }
+    main.expand{
+      width:calc(100% - 30px);
+      left: 10px;
+    }
+    
+    .menu-bar:hover{
+      background-color: #d57e9dc7;
+      border-radius: 5px;
+    }
+    a.app-menu__item:focus{
+      outline: none;
+    }
+    
+    </style>
+</head>
+<body class="app"> 
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+  <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="pic/admin.jpg" width="50px" alt="User Image">
+    <div>
+      <p class="h5"><b>Hello Admin!</b></p>
+      <a href="#" class="text-light" >Đăng xuất<i class="p-1 fa-solid fa-right-from-bracket"></i></a>
+    </div>
+  </div>
+  <hr>
+  <ul class="app-menu">
+    <li>
+      <a class="app-menu__item" href="admin_statistic.html">
+        <i class="app-menu__icon fa-solid fa-chart-line"></i>
+        <span class="app-menu__label">Thống kê</span>
+      </a>
+    </li>
+    <li>
+      <a class="app-menu__item" href="admin_order.html" >
+        <i class="app-menu__icon fa-solid fa-cart-shopping"></i>
+        <span class="app-menu__label">Đơn hàng</span>
+      </a>
+    </li>
+    <li>
+      <a class="app-menu__item" href="admin_product.html">
+        <i class="app-menu__icon fa-solid fa-store"></i>
+        <span class="app-menu__label">Sản phẩm</span>
+      </a>
+    </li>
+    <li>
+      <a class="app-menu__item" href="admin_customer.html" autofocus>
+        <i class="app-menu__icon fa-solid fa-user"></i>
+        <span class="app-menu__label">Khách hàng</span>
+      </a>
+    </li>
+    <li>
+      <a class="app-menu__item" href="admin_staff.html">
+        <i class="app-menu__icon fa-solid fa-users"></i>
+        <span class="app-menu__label">Nhân viên</span>
+      </a>
+    </li>
+    <hr>
+    <li>
+      <a class="app-menu__item" href="admin_management.html">
+        <i class="app-menu__icon fa-solid fa-list-check"></i>
+        <span class="app-menu__label">Quản lý</span>
+      </a>
+    </li>
+    <li>
+      <a class="app-menu__item" href="admin_setup.html">
+        <i class="app-menu__icon fa-solid fa-gear"></i>
+        <span class="app-menu__label">Cài đặt</span>
+      </a>
+    </li>
+    <li>
+      <p class="tile-footer-menu">Chào mừng đến cửa hàng nội thất LT&CT!</p>
+    </li>
+  </ul>
+</aside>
+<main class="app-content">
+  <header class="main-header">
+    <a class="menu-bar" href="#">
+      <i class="fa-solid fa-bars"></i>
+    </a>
+  </header>
+  <div class="app-title">
+    <ul class="app-breadcrumb breadcrumb side">
+      <li class="breadcrumb-item active"><a href="#"><b>Danh sách đơn hàng</b></a></li>
+    </ul>
+    
+</main>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+  const aside= document.querySelector('aside');
+  const toggle_menu=document.querySelector('.menu-bar');
+  const main=document.querySelector('main');
+
+  toggle_menu.onclick = function(){
+    aside.classList.toggle('hide');
+    main.classList.toggle('expand');
+  };
+</script>
+</html>
