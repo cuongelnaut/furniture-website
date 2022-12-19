@@ -553,13 +553,14 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin:20px 30px 0 10px;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -580,7 +581,7 @@ pre code {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
-  }
+  } */
 }
 
 .container-fluid {
@@ -599,6 +600,7 @@ pre code {
       flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  height: inherit;
 }
 
 .no-gutters {
@@ -3457,7 +3459,9 @@ input[type="button"].btn-block {
 .dropdown-menu.show {
   display: block;
 }
-
+.main-header{
+  margin-bottom:10px;
+}
 .dropdown-header {
   display: block;
   padding: 0 20px;
@@ -13503,12 +13507,12 @@ be a descendant of the grid when it is being dragged.
 
 ::-moz-selection {
   color: #FFF;
-  background-color: rgb(0, 28, 64)
+  background-color: rgb(89, 158, 246)
 }
 
 ::selection {
   color: #FFF;
-  background-color:rgb(0, 28, 64)
+  background-color:rgb(89, 158, 246)
 }
 
 /* @media (min-width: 768px) {
@@ -14180,7 +14184,7 @@ be a descendant of the grid when it is being dragged.
   -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
   box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
   border-left: 6px solid #FFD43B;
-  margin: 20px 0;
+  margin: 0 0 20px 10px;
 }
 
 @media print {
@@ -14240,7 +14244,7 @@ be a descendant of the grid when it is being dragged.
   padding: 20px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  margin: 0 0 30px 10px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
