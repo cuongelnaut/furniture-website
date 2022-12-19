@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="fonts/css/all.css">
     <link rel="stylesheet" href="fonts/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="shortcut icon" type="image/png" href="pic/icon.ico"/>
     <title>Admin|Cài đặt</title>
     <style>
@@ -50,7 +53,36 @@
       box-shadow: none;
       border: 1px solid rgb(22 22 72);
     }
-    
+    .break-6-4{
+      display:grid;
+      grid-template-columns: 60% 40%;
+      column-gap:15px;
+      padding:0 15px;
+    }
+    .insert-image{
+      position: relative;
+      margin-left:10px;
+      border:2px dashed grey;
+      text-align: center;
+      font-size: 30px;
+      height:70%;
+    }
+      .choose-image{
+      position: absolute;
+      top:50%;
+      translate: 0 -50%;
+    }
+    .choose-image:hover{
+      color: rgb(0, 195, 255);
+    }
+    textarea{
+      width: 100%;
+      display: block;
+      background-color: #F1F1F1;
+      border-radius: 5px;
+      border: none;
+      padding: 15px;
+    }
     </style>
 </head>
 <body class="app"> 
@@ -59,7 +91,7 @@
   <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="pic/admin.jpg" width="50px" alt="User Image">
     <div>
       <p class="h5"><b>Hello Admin!</b></p>
-      <a href="#" class="text-light" >Đăng xuất<i class="p-1 fa-solid fa-right-from-bracket"></i></a>
+      <a href="index.html" class="text-light" >Đăng xuất<i class="p-1 fa-solid fa-right-from-bracket"></i></a>
     </div>
   </div>
   <hr>
@@ -96,9 +128,9 @@
     </li>
     <hr>
     <li>
-      <a class="app-menu__item" href="admin_management.html">
+      <a class="app-menu__item" href="admin_sale.html">
         <i class="app-menu__icon fa-solid fa-list-check"></i>
-        <span class="app-menu__label">Quản lý</span>
+        <span class="app-menu__label">Quản lý mã</span>
       </a>
     </li>
     <li>
@@ -120,8 +152,72 @@
   </header>
   <div class="app-title">
     <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item active"><a href="#"><b>Danh sách đơn hàng</b></a></li>
+      <li class="breadcrumb-item active"><a href="admin_setup.html"><b>Cài đặt</b></a></li>
     </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <div>
+          <h3 class="tile-title">Cài đặt slider</h3>
+        </div>
+        <div class="tile-body break-6-4">
+          <div class="border-right">
+            <div class="form-group break-6-4">
+              <div class="form-group">
+                <label class="control-label">Tên slider </label>
+                <input class="form-control" type="text" placeholder="name slider">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Thêm ảnh </label>
+                <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Mô tả </label>
+              <textarea rows="9" cols="" name="comment" form="usrform" placeholder="description"></textarea>
+            </div>
+          </div>
+          <div class="preview"> 
+            <div class="font-weight-bold m-2"> Xem trước</div>
+            <div class="insert-image">
+              <i class="fa-regular fa-image choose-image"></i>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <div>
+          <h3 class="tile-title">Tạo thông báo</h3>
+        </div>
+        <div class="tile-body break-6-4">
+          <div class="border-right">
+            <div class="form-group break-6-4">
+              <div class="form-group">
+                <label class="control-label">Tiêu đề </label>
+                <input class="form-control" type="text" placeholder="name slider">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Thêm ảnh </label>
+                <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Mô tả </label>
+              <textarea rows="9" cols="" name="comment" form="usrform" placeholder="description"></textarea>
+            </div>
+          </div>
+          <div class="preview"> 
+            <div class="font-weight-bold m-2"> Xem trước</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 </body>

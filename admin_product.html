@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="fonts/css/all.css">
     <link rel="stylesheet" href="fonts/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="shortcut icon" type="image/png" href="pic/icon.ico"/>
     <title>Admin|Sản phẩm</title>
     <style>
@@ -59,7 +62,7 @@
   <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="pic/admin.jpg" width="50px" alt="User Image">
     <div>
       <p class="h5"><b>Hello Admin!</b></p>
-      <a href="#" class="text-light" >Đăng xuất<i class="p-1 fa-solid fa-right-from-bracket"></i></a>
+      <a href="index.html" class="text-light" >Đăng xuất<i class="p-1 fa-solid fa-right-from-bracket"></i></a>
     </div>
   </div>
   <hr>
@@ -96,9 +99,9 @@
     </li>
     <hr>
     <li>
-      <a class="app-menu__item" href="admin_management.html">
+      <a class="app-menu__item" href="admin_sale.html">
         <i class="app-menu__icon fa-solid fa-list-check"></i>
-        <span class="app-menu__label">Quản lý</span>
+        <span class="app-menu__label">Quản lý mã</span>
       </a>
     </li>
     <li>
@@ -120,9 +123,90 @@
   </header>
   <div class="app-title">
     <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item active"><a href="#"><b>Danh sách đơn hàng</b></a></li>
+      <li class="breadcrumb-item active"><a href="admin_product.html"><b>Danh sách sản phẩm</b></a></li>
     </ul>
-    
+    <div id="clock"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <div class="tile-body">
+          <div class="row element-button">
+            <div class="col-sm-2">
+              <a class="btn btn-add btn-sm" href="admin_product_add.html" title="Thêm"><i class="fas fa-plus"></i>
+                Thêm sản phẩm</a>
+            </div>
+            <div class="col-sm-2">
+              <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
+                  class="fas fa-trash-alt"></i> Xóa tất cả </a>
+            </div>
+          </div>
+          <table class="table table-hover table-bordered" id="sampleTable">
+            <thead>
+              <tr>
+                <th width="10"><input type="checkbox" id="all"></th>
+                <th class="text-center">Mã sản phẩm</th>
+                <th class="text-center">Tên sản phẩm</th>
+                <th class="text-center">Ảnh</th>
+                <th class="text-center">Số lượng</th>
+                <th class="text-center">Tình trạng</th>
+                <th class="text-center">Giá tiền</th>
+                <th class="text-center">Danh mục</th>
+                <th class="text-center">Chức năng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                <td class="text-center">00001122</td>
+                <td>Bàn ăn gỗ Theresa</td>
+                <td style="text-align: center;"><img src="pic/theresa.jpg" alt="" width="100px;"></td>
+                <td class="text-center">7</td>
+                <td class="text-center"><span class="badge bg-success">Còn hàng</span></td>
+                <td class="text-center">210.000 đ</td>
+                <td class="text-center">Bàn ăn</td>
+                <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
+                      class="fas fa-trash-alt"></i> </button>
+                  <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i
+                      class="fa fa-edit"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                <td class="text-center">70008542</td>
+                <td>Ghế ăn gỗ Hirosima</td>
+                <td style="text-align: center;"><img src="pic/hirosima.jpg" alt="" width="100px;"></td>
+                <td class="text-center">5</td>
+                <td class="text-center"><span class="badge bg-success">Còn hàng</span></td>
+                <td class="text-center">100.000 đ</td>
+                <td class="text-center">Ghế ăn</td>
+                <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
+                      class="fas fa-trash-alt"></i> </button>
+                  <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i
+                      class="fa fa-edit"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                <td class="text-center">61004521</td>
+                <td>Bàn học</td>
+                <td style="text-align: center;"><img src="pic/study.jpg" alt="" width="100px;"></td>
+                <td class="text-center">0</td>
+                <td class="text-center"><span class="badge bg-danger">Hết hàng</span></td>
+                <td class="text-center">1.500.000 đ</td>
+                <td class="text-center">Bàn học</td>
+                <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
+                      class="fas fa-trash-alt"></i> </button>
+                  <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i
+                      class="fa fa-edit"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fonts/css/all.css">
+  <link rel="stylesheet" href="fonts/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" type="image/png" href="pic/icon.ico"/>
+  <title>Welcome to LT&CT!</title>
+  <style>
+    .tile-footer-menu {
+      position: absolute;
+      bottom: 2%;
+      text-align: center;
+      color: #FFF;
+      text-shadow: 1px 1px #b94971, 2px 2px #b94971, 3px 3px #b94971,
+        -1px -1px #8d6cb9, -2px -1px #8d6cb9, -3px -1px #8d6cb9;
+      font: Bold 20px Sketch_Block;
+      -webkit-transition: all 0.12s ease-out;
+      -moz-transition: all 0.12s ease-out;
+      -o-tramsition: all 0.12s ease-out;
+      padding: 0 20px;
+    }
+
+    .menu-bar {
+      font-size: 30px;
+      padding: 5px 10px;
+    }
+
+    body {
+      position: relative;
+      width: 100%;
+    }
+
+    aside.hide {
+      width: 0;
+    }
+
+    main.expand {
+      width: calc(100% - 30px);
+      left: 10px;
+    }
+
+    .menu-bar:hover {
+      background-color: #d57e9dc7;
+      border-radius: 5px;
+    }
+
+    a.app-menu__item:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body class="app">
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="pic/admin.jpg" width="50px" alt="User Image">
+      <div>
+        <p class="h5"><b>Hello Admin!</b></p>
+        <a href="index.html" class="text-light" >Đăng xuất<i class="p-1 fa-solid fa-right-from-bracket"></i></a>
+      </div>
+    </div>
+    <hr>
+    <ul class="app-menu">
+      <li>
+        <a class="app-menu__item" href="admin_statistic.html">
+          <i class="app-menu__icon fa-solid fa-chart-line"></i>
+          <span class="app-menu__label">Thống kê</span>
+        </a>
+      </li>
+      <li>
+        <a class="app-menu__item" href="admin_order.html" >
+          <i class="app-menu__icon fa-solid fa-cart-shopping"></i>
+          <span class="app-menu__label">Đơn hàng</span>
+        </a>
+      </li>
+      <li>
+        <a class="app-menu__item" href="admin_product.html">
+          <i class="app-menu__icon fa-solid fa-store"></i>
+          <span class="app-menu__label">Sản phẩm</span>
+        </a>
+      </li>
+      <li>
+        <a class="app-menu__item" href="admin_customer.html">
+          <i class="app-menu__icon fa-solid fa-user"></i>
+          <span class="app-menu__label">Khách hàng</span>
+        </a>
+      </li>
+      <li>
+        <a class="app-menu__item activetab" href="admin_staff.html">
+          <i class="app-menu__icon fa-solid fa-users"></i>
+          <span class="app-menu__label">Nhân viên</span>
+        </a>
+      </li>
+      <hr>
+      <li>
+        <a class="app-menu__item" href="admin_sale.html">
+          <i class="app-menu__icon fa-solid fa-list-check"></i>
+          <span class="app-menu__label">Quản lý mã</span>
+        </a>
+      </li>
+      <li>
+        <a class="app-menu__item" href="admin_setup.html">
+          <i class="app-menu__icon fa-solid fa-gear"></i>
+          <span class="app-menu__label">Cài đặt</span>
+        </a>
+      </li>
+      <li>
+        <p class="tile-footer-menu">Chào mừng đến cửa hàng nội thất LT&CT!</p>
+      </li>
+    </ul>
+  </aside>
+  <main class="app-content">
+    <header class="main-header">
+      <a class="menu-bar" href="#">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </header>
+    <div class="app-title">
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><a href="admin_staff.html">Danh sách nhân viên</a></li>
+        <li class="breadcrumb-item"><a href="admin_staff_add.html">Thêm nhân viên</a></li>
+      </ul>
+      <div id="clock"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <h3 class="tile-title">Thêm nhân viên</h3>
+          <div class="tile-body">
+            <div class="row element-button">
+              <div class="col-sm-2">
+                <a class="btn btn-add btn-sm" data-toggle="modal" data-target="#exampleModalCenter"><b><i
+                      class="fas fa-folder-plus"></i> Tạo chức vụ mới</b></a>
+              </div>
+            </div>
+            <form class="row">
+              <div class="form-group col-md-4">
+                <label class="control-label">ID nhân viên</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">Họ và tên</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">Địa chỉ email</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">Địa chỉ thường trú</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="form-group  col-md-4">
+                <label class="control-label">Số điện thoại</label>
+                <input class="form-control" type="number" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">Ngày sinh</label>
+                <input class="form-control" type="date">
+              </div>
+              <div class="form-group  col-md-3">
+                <label class="control-label">Nơi sinh</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Số CMND</label>
+                <input class="form-control" type="number" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Ngày cấp</label>
+                <input class="form-control" type="date" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Nơi cấp</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Giới tính</label>
+                <select class="form-control" id="exampleSelect2" required>
+                  <option>-- Chọn giới tính --</option>
+                  <option>Nam</option>
+                  <option>Nữ</option>
+                </select>
+              </div>
+
+              <div class="form-group  col-md-3">
+                <label for="exampleSelect1" class="control-label">Chức vụ</label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>-- Chọn chức vụ --</option>
+                  <option>Bán hàng</option>
+                  <option>Tư vấn</option>
+                  <option>Dịch vụ</option>
+                  <option>Thu Ngân</option>
+                  <option>Quản kho</option>
+                  <option>Bảo trì</option>
+                  <option>Kiểm hàng</option>
+                  <option>Bảo vệ</option>
+                  <option>Tạp vụ</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Bằng cấp</label>
+                <select class="form-control" id="exampleSelect3">
+                  <option>-- Chọn bằng cấp --</option>
+                  <option>Tốt nghiệp Đại Học</option>
+                  <option>Tốt nghiệp Cao Đẳng</option>
+                  <option>Tốt nghiệp Phổ Thông</option>
+                  <option>Chưa tốt nghiệp</option>
+                  <option>Không bằng cấp</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Tình trạng hôn nhân</label>
+                <select class="form-control" id="exampleSelect2">
+                  <option>-- Chọn tình trạng hôn nhân --</option>
+                  <option>Độc thân</option>
+                  <option>Đã kết hôn</option>
+                  <option>Góa</option>
+                  <option>Khác</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <label class="control-label">Ảnh 3x4 nhân viên</label>
+                <div id="myfileupload">
+                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                </div>
+                <div id="thumbbox">
+                  <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <a class="removeimg" href="javascript:"></a>
+                </div>
+                <div id="boxchoice">
+                  <a href="javascript:" class="Choicefile"><i class='bx bx-upload'></i></a>
+                  <p style="clear:both"></p>
+                </div>
+
+              </div>
+          </div>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" href="admin_staff.html">Hủy bỏ</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+  <!--MODAL-->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Tạo chức vụ mới</h5>
+              </span>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Nhập tên chức vụ mới</label>
+              <input class="form-control" type="text" required>
+            </div>
+          </div>
+          <BR>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--MODAL-->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+  const aside = document.querySelector('aside');
+  const toggle_menu = document.querySelector('.menu-bar');
+  const main = document.querySelector('main');
+
+  toggle_menu.onclick = function () {
+    aside.classList.toggle('hide');
+    main.classList.toggle('expand');
+  };
+</script>
+
+</html>
